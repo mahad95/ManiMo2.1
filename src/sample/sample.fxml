@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="0" prefHeight="465.0" prefWidth="471.0" vgap="0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <BorderPane prefHeight="472.0" prefWidth="495.0">
+            <top>
+                <MenuBar prefHeight="32.0" prefWidth="475.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Objekte">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="hinzufügen" />
+                                <MenuItem mnemonicParsing="false" text="Freigeben" />
+                                <MenuItem mnemonicParsing="false" text="Speichern" />
+                                <MenuItem mnemonicParsing="false" text="Schliessen" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Dokumente">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Neues Dokument" />
+                                <MenuItem mnemonicParsing="false" text="Öffnen Dokument" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Extras">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Über" />
+                                <MenuItem mnemonicParsing="false" text="Hilfe" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <left>
+                <ListView fx:id="addObjectsList" prefHeight="267.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets bottom="40.0" left="10.0" right="10.0" top="60.0" />
+                    </BorderPane.margin>
+                </ListView>
+            </left>
+            <center>
+                <ListView fx:id="sortObjectsList" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets bottom="40.0" left="10.0" right="10.0" top="60.0" />
+                    </BorderPane.margin>
+                </ListView>
+            </center>
+            <right>
+                <Group BorderPane.alignment="CENTER">
+                    <children>
+                        <RadioButton fx:id="digressiv" mnemonicParsing="false" onAction="#setText" text="Degressiv">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="Group" />
+                            </toggleGroup>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" />
+                            </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="linear" layoutY="-50.0" mnemonicParsing="false" onAction="#setText" text="Linear" toggleGroup="$Group">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" />
+                            </padding>
+                        </RadioButton>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                    </BorderPane.margin>
+                </Group>
+            </right>
+            <bottom>
+                <GridPane hgap="5.0" vgap="10.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="209.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="262.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Abschreibungsmethode">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="Nutzungsdauer in Jahren" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="Value" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="txtLinear" disable="true" prefHeight="39.0" prefWidth="46.0" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="60.0" top="10.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="60.0" top="10.0" />
+                            </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="60.0" top="10.0" />
+                            </GridPane.margin>
+                        </ChoiceBox>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets bottom="20.0" left="10.0" right="10.0" />
+                    </BorderPane.margin>
+                </GridPane>
+            </bottom>
+        </BorderPane>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>
